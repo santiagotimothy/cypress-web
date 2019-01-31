@@ -55,4 +55,15 @@ describe('TodoMVC - React', () => {
     })
   })
 
+  context('When page is initially opened', function () {
+    it('should click on the Press Me button', function () {
+      // get the currently focused element and assert
+      // that it has class='new-todo'
+      //
+      // http://on.cypress.io/focused
+      cy.get('button#pressMe').click();
+      cy.get('h1#mainText').should('have.text', 'JS changed my value');
+    })
+  })
+
 })
