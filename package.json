@@ -9,7 +9,7 @@
     "cypress:verify": "cypress verify",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:run:record": "cypress run --record",
+    "cypress:run:record": "cypress run --record --key 4e7e8041-7a00-461c-96e6-4af290f8d022",
     "cypress:run:chrome": "cypress run --browser chrome",
     "cypress:run:headed": "cypress run --headed",
     "dev": "run-p --race start:ci cypress:open",
