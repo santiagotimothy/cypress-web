@@ -1,8 +1,7 @@
 class Auth {
-	static processLogin() {
-		return true
+	static processLogin(req, res) {
+		res.status(200).redirect('/dashboard')
 	}
 }
-
 
 module.exports = Auth

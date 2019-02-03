@@ -1,25 +1,34 @@
 const express = require('express')
 const path = require('path')
 const auth = require('./api/auth')
+const basicAuth = require('express-basic-auth')
 
 const app = express()
 const router = express.Router()
 
+// setup auth
+
+const staticAuth = basicAuth({
+	users: { admin: 'p455' },
+})
+
+// page endpoints
 router.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '/containers/index/index.html'))
 })
 
-router.get('/processLogin', (req, res) => {
-	if (auth.processLogin()) {
-		res.send('login successful')
-	} else {
-		res.send('login failed')
-	}
+router.get('/dashboard', (req, res) => {
+	res.sendFile(path.join(__dirname, '/containers/main/index.html'))
 })
+
+// api
+
+router.post('/processLogin', staticAuth, auth.processLogin)
 
 app.use('/js', express.static(path.join(__dirname, 'public/js')))
 app.use('/css', express.static(path.join(__dirname, 'public/css')))
 app.use('/img', express.static(path.join(__dirname, 'public/img')))
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')))
 app.use('/', router)
 module.exports = router
 
