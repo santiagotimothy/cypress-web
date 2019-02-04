@@ -27,10 +27,11 @@
   },
   "dependencies": {
     "base-64": "0.1.0",
+    "body-parser": "1.18.3",
     "director": "1.2.8",
     "express": "4.16.4",
     "express-basic-auth": "1.1.6",
-    "http-server": "0.11.1",
+    "json-middleware": "1.0.2",
     "react": "0.13.3",
     "todomvc-app-css": "2.1.2",
     "todomvc-common": "cypress-io/todomvc-common#88b7c6359ad4a5097312d8b2a21dd539ce9f4446"
