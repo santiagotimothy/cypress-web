@@ -7,17 +7,24 @@
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
 	</head>
 	<body>
-		
-		<section class="app"></section>
-		<footer class="info">
-			<h2 id="mainText"> Cypress test </h2>
-			<button id="pressMe"> Press Me </button>
-		</footer>
+		<header class="info">
+			<h1 id="mainText"> Cypress Credit</h1>
+		</header>
 
+		<section class="app">
+			<form id="login" onsubmit="login()">
+				<input id="username" type="text" placeholder="Username"/>
+				<input id="password" type="password" placeholder="Password"/>
+				<input id="loginSubmit" type="submit" placeholder="Sign In"/>
+				<input onclick="login()" type="button" placeholder="Sign In2"/>
+			</form>
+			
+		</section>
+		<body id="errorMessage"></body>
 		<script src="node_modules/todomvc-common/base.js"></script>
 		<script src="node_modules/react/dist/react-with-addons.js"></script>
 		<script src="node_modules/director/build/director.js"></script>
 		<!-- Main app bundle script load -->
-		<script src="/js/app.js"></script>
+		<script src="/js/login.js"></script>
 	</body>
 </html>
