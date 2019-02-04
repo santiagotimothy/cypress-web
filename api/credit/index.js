@@ -49,16 +49,20 @@ class Credit {
 			if (loanAmount > response.borrowingLimit) {
 				response.loanApproved = false
 			} else {
-				const interest = interestRates[grade.creditGrade] / 100 / 12
+				const interest = interestRates[grade.creditGrade] / 100
 
 				response.interestRate = interestRates[grade.creditGrade]
 				response.totalRepayments = {
-					term3Year: Credit.processPayment(loanAmount, 36, interest).round(2),
-					term5Year: Credit.processPayment(loanAmount, 60, interest).round(2),
+					term3Year: (loanAmount + Credit.processTotalRepayments(loanAmount, 3, interest)).round(2),
+					term5Year: (loanAmount + Credit.processTotalRepayments(loanAmount, 5, interest)).round(2),
 				}
 				response.totalCostOfBorrowing = {
-					term3Year: (Credit.processPayment(loanAmount, 36, interest) / 12).round(2),
-					term5Year: (Credit.processPayment(loanAmount, 60, interest) / 12).round(2),
+					term3Year: (Credit.processTotalRepayments(loanAmount, 3, interest)).round(2),
+					term5Year: (Credit.processTotalRepayments(loanAmount, 5, interest)).round(2),
+				}
+				response.estimatedRepayments = {
+					term3Year: (Credit.processTotalRepayments(loanAmount, 3, interest) / 12).round(2),
+					term5Year: (Credit.processTotalRepayments(loanAmount, 5, interest) / 12).round(2),
 				}
 			}
 		}
@@ -66,8 +70,9 @@ class Credit {
 		res.status(200).send(response)
 	}
 
-	static processPayment(principal, months, interest) {
-		return principal * interest * ((((1 + interest) ** months)) / (((1 + interest) ** months) - 1))
+	static processTotalRepayments(principal, years, interest) {
+		// return principal * interest * ((((1 + interest) ** months)) / (((1 + interest) ** months) - 1))
+		return principal * interest * years
 	}
 
 	static processAge(age) {
