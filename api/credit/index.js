@@ -11,6 +11,11 @@ class Credit {
 
 	static assessScore(req, res) {
 		const { age, income, homeOwnership } = req.body
+
+		if (age <= 0) {
+			res.status(400).send()
+		}
+
 		const grade = Credit.processCreditGrade(age, income, homeOwnership)
 		const response = {
 			creditGrade: grade.creditGrade,
@@ -27,6 +32,11 @@ class Credit {
 			homeOwnership,
 			loanAmount,
 		} = req.body
+
+		if (age <= 0 || loanAmount <= 0) {
+			res.status(400).send()
+		}
+
 		const grade = Credit.processCreditGrade(age, income, homeOwnership)
 		const response = { loanApproved: true }
 		const borrowingLimits = {
