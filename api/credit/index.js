@@ -21,31 +21,53 @@ class Credit {
 	}
 
 	static assessLoanApprovalThreshold(req, res) {
-		const { age, income, homeOwnership } = req.body
+		const {
+			age,
+			income,
+			homeOwnership,
+			loanAmount,
+		} = req.body
 		const grade = Credit.processCreditGrade(age, income, homeOwnership)
 		const response = { loanApproved: true }
+		const borrowingLimits = {
+			Great: 70000,
+			'Very Good': 50000,
+			Good: 40000,
+			Average: 30000,
+		}
+		const interestRates = {
+			Great: 6.99,
+			'Very Good': 11.99,
+			Good: 14.75,
+			Average: 22.99,
+		}
 
-		switch (grade.creditGrade) {
-			case 'Poor':
+		if (grade.creditGrade === 'Poor') {
+			response.loanApproved = false
+		} else {
+			response.borrowingLimit = borrowingLimits[grade.creditGrade]
+			if (loanAmount > response.borrowingLimit) {
 				response.loanApproved = false
-				break
-			case 'Great':
-				response.borrowingLimit = 70000
-				break
-			case 'Very Good':
-				response.borrowingLimit = 50000
-				break
-			case 'Good':
-				response.borrowingLimit = 40000
-				break
-			case 'Average':
-				response.borrowingLimit = 30000
-				break
-			default:
-				break
+			} else {
+				const interest = interestRates[grade.creditGrade] / 100 / 12
+
+				response.interestRate = interestRates[grade.creditGrade]
+				response.totalRepayments = {
+					term3Year: Credit.processPayment(loanAmount, 36, interest).round(2),
+					term5Year: Credit.processPayment(loanAmount, 60, interest).round(2),
+				}
+				response.totalCostOfBorrowing = {
+					term3Year: (Credit.processPayment(loanAmount, 36, interest) / 12).round(2),
+					term5Year: (Credit.processPayment(loanAmount, 60, interest) / 12).round(2),
+				}
+			}
 		}
 
 		res.status(200).send(response)
+	}
+
+	static processPayment(principal, months, interest) {
+		return principal * interest * ((((1 + interest) ** months)) / (((1 + interest) ** months) - 1))
 	}
 
 	static processAge(age) {
@@ -118,3 +140,7 @@ class Credit {
 }
 
 module.exports = Credit
+
+Number.prototype.round = function(places) {
+	return +(Math.round(this + "e+" + places)  + "e-" + places);
+  }
