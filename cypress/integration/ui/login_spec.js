@@ -21,13 +21,13 @@
 // https://github.com/tastejs/todomvc/blob/master/tests/test.js
 // ***********************************************
 
-describe('Login', () => {
+describe('[UI] Login', () => {
 	// setup these constants to match what TodoMVC does
 	beforeEach(() => {
 		cy.visit('/')
 	})
 
-	context('When page is initially opened', () => {
+	context('When login page is opened', () => {
 		it('should show an error message with invalid credentials', () => {
 			cy.get('input#username').type('invalid')
 			cy.get('input#password').type('password')
