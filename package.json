@@ -24,6 +24,7 @@
     "effective:circle:config": "circleci config process circle.yml | sed /^#/d"
   },
   "dependencies": {
+    "base-64": "0.1.0",
     "director": "1.2.8",
     "express": "4.16.4",
     "express-basic-auth": "1.1.6",

@@ -6,6 +6,8 @@ const basicAuth = require('express-basic-auth')
 const app = express()
 const router = express.Router()
 
+const API_VERSION = 'v1'
+
 // setup auth
 
 const staticAuth = basicAuth({
@@ -23,7 +25,7 @@ router.get('/dashboard', (req, res) => {
 
 // api
 
-router.post('/processLogin', staticAuth, auth.processLogin)
+router.post(`/api/${API_VERSION}/auth/processLogin`, staticAuth, auth.processLogin)
 
 app.use('/js', express.static(path.join(__dirname, 'public/js')))
 app.use('/css', express.static(path.join(__dirname, 'public/css')))
@@ -32,4 +34,4 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')))
 app.use('/', router)
 module.exports = router
 
-app.listen(8888)
+app.listen(8008)

@@ -28,9 +28,30 @@ describe('Login', () => {
 	})
 
 	context('When page is initially opened', () => {
-		it('should click on the Press Me button', () => {
-			cy.get('button#pressMe').click()
-			cy.get('h1#mainText').should('have.text', 'JS changed my value')
+		it('should show an error message with invalid credentials', () => {
+			cy.get('input#username').type('invalid')
+			cy.get('input#password').type('password')
+			cy.get('button#loginSubmit').click()
+			cy.get('body#errorMessage').should('have.text', 'Invalid username/password')
+		})
+
+		it('should show an error message with empty password', () => {
+			cy.get('input#username').type('invalid')
+			cy.get('button#loginSubmit').click()
+			cy.get('body#errorMessage').should('have.text', 'Invalid username/password')
+		})
+
+		it('should show an error message with empty username', () => {
+			cy.get('input#password').type('password')
+			cy.get('button#loginSubmit').click()
+			cy.get('body#errorMessage').should('have.text', 'Invalid username/password')
+		})
+
+		it('should redirect on successful login', () => {
+			cy.get('input#username').type('admin')
+			cy.get('input#password').type('p455')
+			cy.get('button#loginSubmit').click()
+			cy.get('h1#titleText').should('have.text', 'Dashboard')
 		})
 	})
 })

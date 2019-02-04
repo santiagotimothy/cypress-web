@@ -1,6 +1,8 @@
 class Auth {
 	static processLogin(req, res) {
-		res.status(200).redirect('/dashboard')
+		const response = { success: true }
+
+		res.status(200).send(response)
 	}
 }
 
