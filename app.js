@@ -29,8 +29,8 @@ router.get('/dashboard', (req, res) => {
 
 router.post(`/api/${API_VERSION}/auth/processLogin`, staticAuth, auth.processLogin)
 
-router.post(`/api/${API_VERSION}/credit/assessScore`, staticAuth, credit.assessScore)
-router.post(`/api/${API_VERSION}/credit/assessLoanApprovalThreshold`, staticAuth, credit.assessLoanApprovalThreshold)
+router.post(`/api/${API_VERSION}/credit/assessScore`, credit.assessScore)
+router.post(`/api/${API_VERSION}/credit/assessLoanApprovalThreshold`, credit.assessLoanApprovalThreshold)
 
 app.use('/js', express.static(path.join(__dirname, 'public/js')))
 app.use('/css', express.static(path.join(__dirname, 'public/css')))

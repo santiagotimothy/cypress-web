@@ -16,7 +16,7 @@ function login() {
 				}
 			}))
 			.catch(() => {
-				document.getElementById('errorMessage').innerHTML = 'Invalid username/password'
+				document.getElementById('errorMessage').innerHTML = '<body>Invalid username/password</body>'
 			})
 	})
 }

@@ -38,7 +38,11 @@ class Credit {
 		}
 
 		const grade = Credit.processCreditGrade(age, income, homeOwnership)
-		const response = { loanApproved: true }
+		const response = {
+			loanApproved: true,
+			creditGrade: grade.creditGrade,
+			score: grade.score,
+		}
 		const borrowingLimits = {
 			Great: 70000,
 			'Very Good': 50000,

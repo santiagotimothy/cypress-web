@@ -8,16 +8,41 @@
 	</head>
 	<body>
 		<footer class="info">
+            <h id="titleText">Dashboard</h>
 			<h1 id="mainText"> Cypress Credit </h1>
-		</footer>
-
+        </footer>
+        <br>
+        
+        <h1>Credit Calculator</h1>
+        <section id="result"></section>
+        <section id="errorMessage"></section>
 		<section class="app">
-            <h1 id="titleText">Dashboard</h1>
+            <br>
+            <body>First Name</body>
+            <input type="text"/>
+            <br>
+            <body>Last Name</body>
+            <input type="text"/>
+            <br>
+            <body>Age</body>
+            <input id="age" type="number"/>
+            <br/>
+            <body>Home Ownership (don't check if rent, etc.)</body>
+            <input id="ownership" type="checkbox"/>
+            <br/>
+            <body>Income (per Annum)</body>
+            <input id="income" type="number"/>
+            <br/>
+            <br/>
+            <body>Loan Amount</body>
+            <input id="loan" type="number"/>
+            <br>
+            <input id="calc" type="button" value="Calculate" onclick="calculate()"></input>
         </section>
 		<script src="node_modules/todomvc-common/base.js"></script>
 		<script src="node_modules/react/dist/react-with-addons.js"></script>
 		<script src="node_modules/director/build/director.js"></script>
 		<!-- Main app bundle script load -->
-		<script src="/js/login.js"></script>
+		<script src="/js/credit.js"></script>
 	</body>
 </html>
