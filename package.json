@@ -14,6 +14,7 @@
     "cypress:run:api:record": "cypress run --record --key 4e7e8041-7a00-461c-96e6-4af290f8d022 --group 'happyfeet-api' --spec 'cypress/integration/api/**/*'",
     "cypress:run:chrome": "cypress run --browser chrome",
     "cypress:run:headed": "cypress run --headed",
+    "selenium:run:chrome": "mocha selenium",
     "dev": "run-p --race start:ci cypress:open",
     "start": "node app",
     "start:ci": "node app",
@@ -51,6 +52,7 @@
     "eslint-plugin-mocha": "5.2.1",
     "eslint-plugin-react": "^7.8.2",
     "mocha-allure-reporter": "1.4.0",
-    "npm-run-all": "4.1.5"
+    "npm-run-all": "4.1.5",
+    "selenium-webdriver": "4.0.0-alpha.1"
   }
 }
