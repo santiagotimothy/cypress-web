@@ -75,21 +75,4 @@ describe('[API] Credit /assessScore', () => {
 				expect(response.status).to.eq(200)
 			})
 	})
-
-	it('fails on empty age parameter', () => {
-		cy.request({
-			method: 'POST',
-			url: '/api/v1/credit/assessScore',
-			headers: {
-				Authorization: 'Basic YWRtaW46cDQ1NQ==',
-			},
-			body: {
-				age: 60,
-				homeOwnership: 'own',
-				income: 70000,
-			},
-		})
-			.its('status')
-			.should('eq', 200)
-	})
 })
