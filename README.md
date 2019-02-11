@@ -71,6 +71,7 @@ Folders:
 
 Files:
 | File | Description |
+| ----- | ----- |
 | `app.js` | Web app engine file |
 | `cypress.json` | Cypress config |
 | `travis.yml` | TravisCI config |
