@@ -17,3 +17,4 @@
 /Users/timothysantiago/cypress-web/gauge/obj/Debug/gauge.csproj.CopyComplete
 /Users/timothysantiago/cypress-web/gauge/obj/Debug/gauge.dll
 /Users/timothysantiago/cypress-web/gauge/obj/Debug/gauge.pdb
+/Users/timothysantiago/cypress-web/gauge/obj/Debug/gauge.csprojAssemblyReference.cache

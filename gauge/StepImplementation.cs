@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using FluentAssertions;
 using Gauge.CSharp.Lib;
 using Gauge.CSharp.Lib.Attribute;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace gauge
 {
@@ -24,7 +26,7 @@ namespace gauge
         public void GotoCreditScreen()
         {
             var navigate = DriverFactory.Driver.Navigate();
-            navigate.GoToUrl(BASE_URL+"/dashboard");
+            navigate.GoToUrl(BASE_URL + "/dashboard");
         }
 
         [Step("Click SignIn button")]
@@ -90,6 +92,31 @@ namespace gauge
         public void TypeInto(string component)
         {
             DriverFactory.Driver.FindElement(By.Id(component)).Click();
+        }
+
+        [Step("Login with <username> and <password> should fail")]
+        public async void LoginFailAsync(string username, string password)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Basic", "");
+            string url = BASE_URL + "/api/v1/auth/processLogin";
+            //HttpContent content = new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.PostAsync(url, null);
+            response.StatusCode.ShouldBeEquivalentTo(401);
+        }
+
+        [Step("Login with <username> and <password> should succeed")]
+        public async void LoginSuccessAsync(string username, string password)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Basic", "YWRtaW46cDQ1NQ==");
+            string url = BASE_URL + "/api/v1/auth/processLogin";
+            //HttpContent content = new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.PostAsync(url, null);
+            response.StatusCode.ShouldBeEquivalentTo(200);
+            var content = response.Content;
         }
     }
 }
