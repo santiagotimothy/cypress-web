@@ -62,22 +62,19 @@ starts the Selenium UI and API tests on Chrome and Chai respectively.
 Folders:
 | Folder | Description |
 | ----- | ----- |
-| `api`| Contains all API code |
-| `containers` | Contains all web HTML codes |
-| `cypress` | Contains all `Cypress` tests, under `/integration` folder |
-| `lib` | Miscellaneous libraries |
-| `public` | Contains all public scripts that are used for front-end |
-| `selenium` | Contains all Selenium scripts under `/tests` |
+| api| Contains all API code |
+| containers | Contains all web HTML codes |
+| cypress | Contains all `Cypress` tests, under `/integration` folder |
+| lib | Miscellaneous libraries |
+| public | Contains all public scripts that are used for front-end |
+| selenium | Contains all Selenium scripts under `/tests` |
 
 Files:
 | File | Description |
 | ----- | ----- |
-| `app.js` | Web app engine file |
-| `cypress.json` | Cypress config |
-| `travis.yml` | TravisCI config |
-
-
-
+| app.js | Web app engine file |
+| cypress.json | Cypress config |
+| travis.yml | TravisCI config |
 
 **As Inspired by:**
 Native Base Kitchen Sink (https://nativebase.io/kitchen-sink-app)
