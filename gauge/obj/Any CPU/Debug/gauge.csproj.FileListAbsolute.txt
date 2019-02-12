@@ -1,0 +1,20 @@
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/gauge.dll
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/gauge.pdb
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/FluentAssertions.Core.dll
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/FluentAssertions.dll
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/Gauge.CSharp.Lib.dll
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/FluentAssertions.pdb
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/FluentAssertions.xml
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/FluentAssertions.Core.pdb
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/FluentAssertions.Core.xml
+/Users/timothysantiago/cypress-web/gauge/obj/Any CPU/Debug/gauge.csprojAssemblyReference.cache
+/Users/timothysantiago/cypress-web/gauge/obj/Any CPU/Debug/gauge.csproj.CoreCompileInputs.cache
+/Users/timothysantiago/cypress-web/gauge/obj/Any CPU/Debug/gauge.csproj.CopyComplete
+/Users/timothysantiago/cypress-web/gauge/obj/Any CPU/Debug/gauge.dll
+/Users/timothysantiago/cypress-web/gauge/obj/Any CPU/Debug/gauge.pdb
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/nunit.framework.dll
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/WebDriver.dll
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/WebDriver.xml
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/nunit.framework.pdb
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/nunit.framework.xml
+/Users/timothysantiago/cypress-web/gauge/gauge_bin/chromedriver

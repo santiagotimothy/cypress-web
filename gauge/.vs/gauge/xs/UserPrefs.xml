@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{8CD606E6-56F9-4CC2-BA43-6192DD386023}|Unit Tests">
+  <MonoDevelop.Ide.ItemProperties.gauge PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="specs/api/signin.spec">
+    <Files>
+      <File FileName="StepImplementation.cs" Line="98" Column="64" />
+      <File FileName="DriverFactory.cs" Line="14" Column="41" />
+      <File FileName="specs/signin.spec" Line="26" Column="17" />
+      <File FileName="specs/credit.spec" Line="15" Column="52" />
+      <File FileName="specs/api/signin.spec" Line="26" Column="17" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="gauge" expanded="True">
+            <Node name="gauge" expanded="True">
+              <Node name="specs" expanded="True">
+                <Node name="api" expanded="True">
+                  <Node name="signin.spec" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="gauge" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

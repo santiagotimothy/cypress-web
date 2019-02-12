@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("fea7459c-90ca-40cb-b293-5ddb1459beb0") = "gauge", "gauge.csproj", "1cc33e4d-617d-45b9-86f8-d0459a46b628"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		1cc33e4d-617d-45b9-86f8-d0459a46b628.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		1cc33e4d-617d-45b9-86f8-d0459a46b628.Debug|Any CPU.Build.0 = Debug|Any CPU
+		1cc33e4d-617d-45b9-86f8-d0459a46b628.Release|Any CPU.ActiveCfg = Release|Any CPU
+		1cc33e4d-617d-45b9-86f8-d0459a46b628.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

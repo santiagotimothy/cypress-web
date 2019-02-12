@@ -7,6 +7,7 @@ Example Node.js webpage + container showcasing different testing tools for UI, A
 
   - Selenium
   - Cypress
+  - Gauge
 
 ### Dependencies:
 
@@ -19,6 +20,13 @@ Example Node.js webpage + container showcasing different testing tools for UI, A
 | Chai | 4.2.0 |
 | Chai-HTTP | 4.2.1 |
 | Express BodyParser | 1.18.3 |
+| Gauge
+| System.Net.HTTP | 4.3.4 |
+| FluentAssertions | 3.5.0 |
+| Gauge (gauge-cli) | latest |
+| Gauge (NuGet) | 0.7.2 |
+| Selenium.Chrome.WebDriver | 2.45 |
+| Selenium.WebDriver | 3.141.0 |
 
 ### Usage
 
@@ -58,8 +66,14 @@ $ npm run selenium:run:chrome
 ```
 starts the Selenium UI and API tests on Chrome and Chai respectively.
 
+Start Gauge tests (Requires Gauge-cli to be installed globally):
+```sh
+$ gauge run specs
+```
+
 ### File and Project structure
 Folders:
+
 | Folder | Description |
 | ----- | ----- |
 | api| Contains all API code |
@@ -68,8 +82,10 @@ Folders:
 | lib | Miscellaneous libraries |
 | public | Contains all public scripts that are used for front-end |
 | selenium | Contains all Selenium scripts under `/tests` |
+| gauge | Contains all Gauge scripts and step definitions |
 
 Files:
+
 | File | Description |
 | ----- | ----- |
 | app.js | Web app engine file |
