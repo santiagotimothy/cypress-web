@@ -1,4 +1,4 @@
-function login() {
+export default function login() {
 	const username = document.getElementById('username').value
 	const password = document.getElementById('password').value
 	const credentials = btoa(`${username}:${password}`)
